@@ -1,0 +1,20 @@
+{
+  "name": "truejs",
+  "version": "1.0.0",
+  "description": "validation library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "npx git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangtranson/truejs.git"
+  },
+  "author": "Hoang Tran <Hayden.tran.d@gmail.com> (https://github.com/hoangtranson)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoangtranson/truejs/issues"
+  },
+  "homepage": "https://github.com/hoangtranson/truejs#readme"
+}
