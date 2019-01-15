@@ -9,7 +9,8 @@ const {
   isNegative,
   isInteger,
   equals,
-  gt
+  gt,
+  between
 } = require("../number");
 
 test.todo("isNumber should throw error when argument is invalid");
@@ -50,3 +51,8 @@ test.todo("gt should be a function");
 test.todo("gt should throw error when argument is invalid");
 test.todo("gt should return true");
 test.todo("gt should return false");
+
+test.todo("between should be a function");
+test.todo("between should throw error when arguments is invalid");
+test.todo("between should return true");
+test.todo("between should return false");
