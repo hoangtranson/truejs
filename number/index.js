@@ -1,10 +1,10 @@
 const checkType = require("../utils");
 
 const numberValidator = () => {
-  const isNumber = () => value => checkType(value, "number");
-  const isNaN = () => value => Number.isNaN(value);
+  const isNumber = value => checkType(value, "number");
+  const isNaN = value => Number.isNaN(value);
   const min = min => {
-    if (!isNumber()(min)) {
+    if (!isNumber(min)) {
       throw new TypeError("min is not a valid number");
     }
 
@@ -12,7 +12,7 @@ const numberValidator = () => {
   };
 
   const max = max => {
-    if (!isNumber()(max)) {
+    if (!isNumber(max)) {
       throw new TypeError("max is not a valid number");
     }
 
@@ -20,17 +20,17 @@ const numberValidator = () => {
   };
 
   const lt = lt => {
-    if (!isNumber()(lt)) {
+    if (!isNumber(lt)) {
       throw new TypeError("lt is not a valid number");
     }
     return value => value < lt;
   };
 
-  const isPositive = () => value => value > 0;
+  const isPositive = value => value > 0;
   const isNegative = () => value => value < 0;
   const isInteger = () => value => Number.isInteger(value);
   const equals = expected => {
-    if (!isNumber()(expected)) {
+    if (!isNumber(expected)) {
       throw new TypeError("expected is not a valid number");
     }
 
@@ -38,7 +38,7 @@ const numberValidator = () => {
   };
 
   const gt = gt => {
-    if (!isNumber()(expected)) {
+    if (!isNumber(expected)) {
       throw new TypeError("gt is not a valid number");
     }
 
@@ -46,11 +46,11 @@ const numberValidator = () => {
   };
 
   const between = (a, b) => {
-    if (!isNumber()(a)) {
+    if (!isNumber(a)) {
       throw new TypeError("a is not a valid number");
     }
 
-    if (!isNumber()(b)) {
+    if (!isNumber(b)) {
       throw new TypeError("b is not a valid number");
     }
 

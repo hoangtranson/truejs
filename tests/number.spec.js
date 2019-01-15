@@ -1,12 +1,10 @@
 import test from "ava";
-const { min, isNumber, isNaN, max, lt } = require("../number");
+const { min, isNumber, isNaN, max, lt, isPositive } = require("../number");
 
-test.todo("isNumber should be a function");
 test.todo("isNumber should throw error when argument is invalid");
 test.todo("isNumber should return valid number");
 test.todo("isNumber should return invalid number");
 
-test.todo("isNaN should be a function");
 test.todo("isNaN should return true");
 test.todo("isNaN should return false");
 
@@ -22,3 +20,6 @@ test.todo("lt should be a function");
 test.todo("lt should throw error when argument is invalid");
 test.todo("lt should return valid number");
 test.todo("lt should return invalid number");
+
+test.todo("isPositive should return true");
+test.todo("isPositive should return false");
