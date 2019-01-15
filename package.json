@@ -4,7 +4,7 @@
   "description": "validation library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ava",
     "commit": "npx git-cz"
   },
   "repository": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/hoangtranson/truejs/issues"
   },
-  "homepage": "https://github.com/hoangtranson/truejs#readme"
+  "homepage": "https://github.com/hoangtranson/truejs#readme",
+  "devDependencies": {
+    "ava": "1.1.0"
+  }
 }
