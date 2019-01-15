@@ -7,7 +7,8 @@ const {
   lt,
   isPositive,
   isNegative,
-  isInteger
+  isInteger,
+  equals
 } = require("../number");
 
 test.todo("isNumber should throw error when argument is invalid");
@@ -38,3 +39,8 @@ test.todo("isNegative should return false");
 
 test.todo("isInteger should return true");
 test.todo("isInteger should return false");
+
+test.todo("equals should be a function");
+test.todo("equals should throw error when argument is invalid");
+test.todo("equals should return true");
+test.todo("equals should return false");
