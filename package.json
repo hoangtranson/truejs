@@ -4,7 +4,8 @@
   "description": "validation library",
   "main": "index.js",
   "scripts": {
-    "test": "ava",
+    "test": "ava ./tests/**/*",
+    "test:coverage": "nyc ava ./tests/**/*",
     "commit": "npx git-cz"
   },
   "repository": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/hoangtranson/truejs#readme",
   "devDependencies": {
-    "ava": "1.1.0"
+    "ava": "1.1.0",
+    "nyc": "13.1.0"
   }
 }

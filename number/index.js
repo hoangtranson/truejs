@@ -1,4 +1,4 @@
-const checkType = require("./utils");
+const checkType = require("../utils");
 
 const numberValidator = () => {
   const isNumber = () => value => checkType(value, "number");
@@ -37,7 +37,7 @@ const numberValidator = () => {
     return value => value === expected;
   };
 
-  const greaterThan = gt => {
+  const gt = gt => {
     if (!isNumber()(expected)) {
       throw new TypeError("gt is not a valid number");
     }
@@ -72,7 +72,7 @@ const numberValidator = () => {
     isNegative,
     isInteger,
     equals,
-    greaterThan,
+    gt,
     between
   };
 };
