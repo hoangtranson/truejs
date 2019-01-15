@@ -27,8 +27,8 @@ const numberValidator = () => {
   };
 
   const isPositive = value => value > 0;
-  const isNegative = () => value => value < 0;
-  const isInteger = () => value => Number.isInteger(value);
+  const isNegative = value => value < 0;
+  const isInteger = value => Number.isInteger(value);
   const equals = expected => {
     if (!isNumber(expected)) {
       throw new TypeError("expected is not a valid number");
