@@ -8,7 +8,8 @@ const {
   isPositive,
   isNegative,
   isInteger,
-  equals
+  equals,
+  gt
 } = require("../number");
 
 test.todo("isNumber should throw error when argument is invalid");
@@ -28,8 +29,8 @@ test.todo("max should should return right");
 
 test.todo("lt should be a function");
 test.todo("lt should throw error when argument is invalid");
-test.todo("lt should return valid number");
-test.todo("lt should return invalid number");
+test.todo("lt should return true");
+test.todo("lt should return false");
 
 test.todo("isPositive should return true");
 test.todo("isPositive should return false");
@@ -44,3 +45,8 @@ test.todo("equals should be a function");
 test.todo("equals should throw error when argument is invalid");
 test.todo("equals should return true");
 test.todo("equals should return false");
+
+test.todo("gt should be a function");
+test.todo("gt should throw error when argument is invalid");
+test.todo("gt should return true");
+test.todo("gt should return false");
