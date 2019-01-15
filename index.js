@@ -8,3 +8,5 @@ const truth = () => {
 
   return value => validator.reduce((valid, v) => valid && v(value), true);
 };
+
+module.exports = truth;
