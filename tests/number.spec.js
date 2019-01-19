@@ -13,7 +13,13 @@ const {
   between
 } = require("../number");
 
-test.todo("isNumber should throw error when argument is invalid");
+test("isNumber should return false when input is not a number", t => {
+  const inputs = ["1", true, "-3", null, "$4"];
+  inputs.forEach(input => {
+    const type = typeof input;
+    t.is(isNumber(input), false, `${input} is ${type}`);
+  });
+});
 test.todo("isNumber should return valid number");
 test.todo("isNumber should return invalid number");
 

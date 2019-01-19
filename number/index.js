@@ -77,4 +77,4 @@ const numberValidator = () => {
   };
 };
 
-module.exports = numberValidator;
+module.exports = numberValidator();
