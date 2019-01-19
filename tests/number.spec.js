@@ -20,8 +20,13 @@ test("isNumber should return false when input is not a number", t => {
     t.is(isNumber(input), false, `${input} is ${type}`);
   });
 });
-test.todo("isNumber should return valid number");
-test.todo("isNumber should return invalid number");
+test("isNumber should return true when input is a number", t => {
+  const inputs = [Number.NaN, Number.NEGATIVE_INFINITY, Math.PI, 1, -1];
+  inputs.forEach(input => {
+    const type = typeof input;
+    t.is(isNumber(input), true, `${input} is ${type}`);
+  });
+});
 
 test.todo("isNaN should return true");
 test.todo("isNaN should return false");
