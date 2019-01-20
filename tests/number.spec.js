@@ -15,31 +15,35 @@ const {
 
 test("isNumber should return false when input is not a number", t => {
   const inputs = ["1", true, "-3", null, "$4"];
+  const check = isNumber();
   inputs.forEach(input => {
     const type = typeof input;
-    t.is(isNumber(input), false, `${input} is ${type}`);
+    t.is(check(input), false, `${input} is ${type}`);
   });
 });
 test("isNumber should return true when input is a number", t => {
   const inputs = [Number.NaN, Number.NEGATIVE_INFINITY, Math.PI, 1, -1, 0xff];
+  const check = isNumber();
   inputs.forEach(input => {
     const type = typeof input;
-    t.is(isNumber(input), true, `${input} is ${type}`);
+    t.is(check(input), true, `${input} is ${type}`);
   });
 });
 
 test("isNaN should return true", t => {
   const inputs = [Number.NEGATIVE_INFINITY, Math.PI, 1, -1, 0xff];
+  const check = isNaN();
   inputs.forEach(input => {
     const type = typeof input;
-    t.is(isNaN(input), false, `${input} is ${type}`);
+    t.is(check(input), false, `${input} is ${type}`);
   });
 });
 test("isNaN should return false", t => {
   const inputs = [Number.NaN];
+  const check = isNaN();
   inputs.forEach(input => {
     const type = typeof input;
-    t.is(isNaN(input), true, `${input} is ${type}`);
+    t.is(check(input), true, `${input} is ${type}`);
   });
 });
 
@@ -94,38 +98,43 @@ test("lt should return false", t => {
 
 test("isPositive should return true", t => {
   t.plan(4);
-  t.is(isPositive(1), true);
-  t.is(isPositive(Number.POSITIVE_INFINITY), true);
-  t.is(isPositive(1.0), true);
-  t.is(isPositive(0xca), true);
+  const check = isPositive();
+  t.is(check(1), true);
+  t.is(check(Number.POSITIVE_INFINITY), true);
+  t.is(check(1.0), true);
+  t.is(check(0xca), true);
 });
 test("isPositive should return false", t => {
   t.plan(4);
-  t.is(isPositive(-1), false);
-  t.is(isPositive(Number.NEGATIVE_INFINITY), false);
-  t.is(isPositive(-1.0), false);
-  t.is(isPositive(-0xca), false);
+  const check = isPositive();
+  t.is(check(-1), false);
+  t.is(check(Number.NEGATIVE_INFINITY), false);
+  t.is(check(-1.0), false);
+  t.is(check(-0xca), false);
 });
 
 test("isNegative should return true", t => {
   t.plan(4);
-  t.is(isNegative(-1), true);
-  t.is(isNegative(Number.NEGATIVE_INFINITY), true);
-  t.is(isNegative(-1.0), true);
-  t.is(isNegative(-0xca), true);
+  const check = isNegative();
+  t.is(check(-1), true);
+  t.is(check(Number.NEGATIVE_INFINITY), true);
+  t.is(check(-1.0), true);
+  t.is(check(-0xca), true);
 });
 test("isNegative should return false", t => {
   t.plan(4);
-  t.is(isNegative(1), false);
-  t.is(isNegative(Number.POSITIVE_INFINITY), false);
-  t.is(isNegative(1.0), false);
-  t.is(isNegative(0xca), false);
+  const check = isNegative();
+  t.is(check(1), false);
+  t.is(check(Number.POSITIVE_INFINITY), false);
+  t.is(check(1.0), false);
+  t.is(check(0xca), false);
 });
 
 test("isInteger should return true", t => {
   const inputs = [1, -1, 1.0, 0 - 0, 0xff];
+  const check = isInteger();
   inputs.forEach(input => {
-    t.is(isInteger(input), true, `${input} should be an integer`);
+    t.is(check(input), true, `${input} should be an integer`);
   });
 });
 test("isInteger should return false", t => {
@@ -141,8 +150,9 @@ test("isInteger should return false", t => {
     "#1",
     undefined
   ];
+  const check = isInteger();
   inputs.forEach(input => {
-    t.is(isInteger(input), false, `${input} should not be an integer`);
+    t.is(check(input), false, `${input} should not be an integer`);
   });
 });
 
