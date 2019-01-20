@@ -160,8 +160,11 @@ test("equals should return false", t => {
   t.is(equals(pair[0])(pair[1]), false);
 });
 
-test.todo("gt should be a function");
-test.todo("gt should throw error when argument is invalid");
+test("gt should throw error when argument is invalid", t => {
+  const pair = [null, 1];
+  const error = t.throws(() => gt(pair[0])(pair[1]), TypeError);
+  t.is(error.message, "gt is not a valid number");
+});
 test.todo("gt should return true");
 test.todo("gt should return false");
 

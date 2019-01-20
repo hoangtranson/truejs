@@ -26,7 +26,7 @@ const numberValidator = () => {
     return value => value < lt;
   };
 
-  const isPositive = value => value >= 0;
+  const isPositive = value => value > 0;
   const isNegative = value => value < 0;
   const isInteger = value => Number.isInteger(value);
   const equals = expected => {
@@ -38,7 +38,7 @@ const numberValidator = () => {
   };
 
   const gt = gt => {
-    if (!isNumber(expected)) {
+    if (!isNumber(gt)) {
       throw new TypeError("gt is not a valid number");
     }
 
