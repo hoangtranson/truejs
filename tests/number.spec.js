@@ -128,7 +128,23 @@ test("isInteger should return true", t => {
     t.is(isInteger(input), true, `${input} should be an integer`);
   });
 });
-test.todo("isInteger should return false");
+test("isInteger should return false", t => {
+  const inputs = [
+    Math.PI,
+    Number.NaN,
+    Number.POSITIVE_INFINITY,
+    Number.NEGATIVE_INFINITY,
+    "1",
+    "-1",
+    true,
+    null,
+    "#1",
+    undefined
+  ];
+  inputs.forEach(input => {
+    t.is(isInteger(input), false, `${input} should not be an integer`);
+  });
+});
 
 test.todo("equals should be a function");
 test.todo("equals should throw error when argument is invalid");
