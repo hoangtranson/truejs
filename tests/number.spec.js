@@ -21,15 +21,27 @@ test("isNumber should return false when input is not a number", t => {
   });
 });
 test("isNumber should return true when input is a number", t => {
-  const inputs = [Number.NaN, Number.NEGATIVE_INFINITY, Math.PI, 1, -1];
+  const inputs = [Number.NaN, Number.NEGATIVE_INFINITY, Math.PI, 1, -1, 0xff];
   inputs.forEach(input => {
     const type = typeof input;
     t.is(isNumber(input), true, `${input} is ${type}`);
   });
 });
 
-test.todo("isNaN should return true");
-test.todo("isNaN should return false");
+test("isNaN should return true", t => {
+  const inputs = [Number.NEGATIVE_INFINITY, Math.PI, 1, -1, 0xff];
+  inputs.forEach(input => {
+    const type = typeof input;
+    t.is(isNaN(input), false, `${input} is ${type}`);
+  });
+});
+test("isNaN should return false", t => {
+  const inputs = [Number.NaN];
+  inputs.forEach(input => {
+    const type = typeof input;
+    t.is(isNaN(input), true, `${input} is ${type}`);
+  });
+});
 
 test.todo("min should be a function");
 test.todo("min should throw error when argument is invalid");
