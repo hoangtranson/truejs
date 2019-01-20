@@ -165,7 +165,10 @@ test("gt should throw error when argument is invalid", t => {
   const error = t.throws(() => gt(pair[0])(pair[1]), TypeError);
   t.is(error.message, "gt is not a valid number");
 });
-test.todo("gt should return true");
+test("gt should return true", t => {
+  const pair = [0, 1];
+  t.is(gt(pair[0])(pair[1]), true);
+});
 test.todo("gt should return false");
 
 test.todo("between should be a function");
