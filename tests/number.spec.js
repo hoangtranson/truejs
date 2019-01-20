@@ -184,5 +184,15 @@ test("between should throw error when arguments is invalid", t => {
   const error2 = t.throws(() => between(pair2[0])(pair2[1]), TypeError);
   t.is(error2.message, "b is not a valid number");
 });
-test.todo("between should return true");
+
+test("between should return true", t => {
+  const min = 4,
+    max = 6,
+    input = 5;
+  t.is(
+    between(min, max)(input),
+    true,
+    `${input} should be between ${min} and ${max}`
+  );
+});
 test.todo("between should return false");

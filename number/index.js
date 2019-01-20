@@ -54,13 +54,13 @@ const numberValidator = () => {
       throw new TypeError("b is not a valid number");
     }
 
-    if (min > max) {
-      let temp = min;
-      min = max;
-      max = temp;
+    if (a > b) {
+      let temp = a;
+      a = b;
+      b = temp;
     }
 
-    return value => value > min && value < max;
+    return value => value > a && value < b;
   };
   return {
     isNumber,
