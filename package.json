@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ava ./tests/**/*",
-    "test:coverage": "nyc ava ./tests/**/*",
+    "test:coverage": "nyc --reporter=html ava ./tests/**/*",
     "commit": "npx git-cz"
   },
   "repository": {
