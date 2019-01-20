@@ -70,6 +70,12 @@ test("max should should return true", t => {
   t.is(value, true);
 });
 
+test("max should should return false", t => {
+  const pair = [10, 11];
+  const value = max(pair[0])(pair[1]);
+  t.is(value, false);
+});
+
 test.todo("lt should be a function");
 test.todo("lt should throw error when argument is invalid");
 test.todo("lt should return true");
