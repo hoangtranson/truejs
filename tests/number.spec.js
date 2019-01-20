@@ -151,7 +151,10 @@ test("equals should throw error when argument is invalid", t => {
   const error = t.throws(() => equals(pair[0])(pair[1]), TypeError);
   t.is(error.message, "expected is not a valid number");
 });
-test.todo("equals should return true");
+test("equals should return true", t => {
+  const pair = [1, 1];
+  t.is(equals(pair[0])(pair[1]), true);
+});
 test.todo("equals should return false");
 
 test.todo("gt should be a function");
