@@ -196,8 +196,8 @@ test("between should return true", t => {
   );
 });
 test("between should return false", t => {
-  const min = 4,
-    max = 6,
+  const min = 6,
+    max = 4,
     input = 6;
   t.is(
     between(min, max)(input),
