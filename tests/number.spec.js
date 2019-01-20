@@ -174,7 +174,15 @@ test("gt should return false", t => {
   t.is(gt(pair[0])(pair[1]), false);
 });
 
-test.todo("between should be a function");
-test.todo("between should throw error when arguments is invalid");
+test("between should throw error when arguments is invalid", t => {
+  t.plan(4);
+  const pair1 = [null, 1];
+  const error1 = t.throws(() => between(pair1[0])(pair1[1]), TypeError);
+  t.is(error1.message, "a is not a valid number");
+
+  const pair2 = [1, null];
+  const error2 = t.throws(() => between(pair2[0])(pair2[1]), TypeError);
+  t.is(error2.message, "b is not a valid number");
+});
 test.todo("between should return true");
 test.todo("between should return false");
