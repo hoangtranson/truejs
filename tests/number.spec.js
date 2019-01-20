@@ -195,4 +195,13 @@ test("between should return true", t => {
     `${input} should be between ${min} and ${max}`
   );
 });
-test.todo("between should return false");
+test("between should return false", t => {
+  const min = 4,
+    max = 6,
+    input = 6;
+  t.is(
+    between(min, max)(input),
+    false,
+    `${input} should not be between ${min} and ${max}`
+  );
+});
