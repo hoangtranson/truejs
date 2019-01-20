@@ -169,7 +169,10 @@ test("gt should return true", t => {
   const pair = [0, 1];
   t.is(gt(pair[0])(pair[1]), true);
 });
-test.todo("gt should return false");
+test("gt should return false", t => {
+  const pair = [0, -1];
+  t.is(gt(pair[0])(pair[1]), false);
+});
 
 test.todo("between should be a function");
 test.todo("between should throw error when arguments is invalid");
