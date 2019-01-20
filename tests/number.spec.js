@@ -83,10 +83,14 @@ test("lt should throw error when argument is invalid", t => {
 });
 test("lt should return true", t => {
   const pair = [10, 9];
-  const value = max(pair[0])(pair[1]);
+  const value = lt(pair[0])(pair[1]);
   t.is(value, true);
 });
-test.todo("lt should return false");
+test("lt should return false", t => {
+  const pair = [10, 10];
+  const value = lt(pair[0])(pair[1]);
+  t.is(value, false);
+});
 
 test.todo("isPositive should return true");
 test.todo("isPositive should return false");
