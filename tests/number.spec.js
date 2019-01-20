@@ -48,11 +48,17 @@ test("min should throw error when argument is invalid", t => {
   const error = t.throws(() => min(pair[0])(pair[1]), TypeError);
   t.is(error.message, "min is not a valid number");
 });
-test("min should should return right false", t => {
+test("min should should return false", t => {
   const pair = [2, 1];
   const value = min(pair[0])(pair[1]);
   t.is(value, false);
 });
+test("min should should return true", t => {
+  const pair = [1, 1];
+  const value = min(pair[0])(pair[1]);
+  t.is(value, true);
+});
+
 test.todo("max should be a function");
 test.todo("max should throw error when argument is invalid");
 test.todo("max should should return right");
