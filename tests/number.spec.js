@@ -122,7 +122,12 @@ test("isNegative should return false", t => {
   t.is(isNegative(0xca), false);
 });
 
-test.todo("isInteger should return true");
+test("isInteger should return true", t => {
+  const inputs = [1, -1, 1.0, 0 - 0, 0xff];
+  inputs.forEach(input => {
+    t.is(isInteger(input), true, `${input} should be an integer`);
+  });
+});
 test.todo("isInteger should return false");
 
 test.todo("equals should be a function");
