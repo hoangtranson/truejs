@@ -99,8 +99,13 @@ test("isPositive should return true", t => {
   t.is(isPositive(1.0), true);
   t.is(isPositive(0xca), true);
 });
-test.todo("isPositive should return false");
-
+test("isPositive should return false", t => {
+  t.plan(4);
+  t.is(isPositive(-1), false);
+  t.is(isPositive(Number.NEGATIVE_INFINITY), false);
+  t.is(isPositive(-1.0), false);
+  t.is(isPositive(-0xca), false);
+});
 test.todo("isNegative should return true");
 test.todo("isNegative should return false");
 
