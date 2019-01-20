@@ -114,7 +114,13 @@ test("isNegative should return true", t => {
   t.is(isNegative(-1.0), true);
   t.is(isNegative(-0xca), true);
 });
-test.todo("isNegative should return false");
+test("isNegative should return false", t => {
+  t.plan(4);
+  t.is(isNegative(1), false);
+  t.is(isNegative(Number.POSITIVE_INFINITY), false);
+  t.is(isNegative(1.0), false);
+  t.is(isNegative(0xca), false);
+});
 
 test.todo("isInteger should return true");
 test.todo("isInteger should return false");
