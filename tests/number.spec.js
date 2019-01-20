@@ -43,9 +43,12 @@ test("isNaN should return false", t => {
   });
 });
 
-test.todo("min should be a function");
-test.todo("min should throw error when argument is invalid");
-test.todo("min should should return right");
+test("min should throw error when argument is invalid", t => {
+  const pair = [null, 1];
+  const error = t.throws(() => min(pair[0])(pair[1]), TypeError);
+  t.is(error.message, "min is not a valid number");
+});
+test.todo("min should should return true");
 
 test.todo("max should be a function");
 test.todo("max should throw error when argument is invalid");
