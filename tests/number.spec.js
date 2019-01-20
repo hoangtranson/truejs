@@ -155,7 +155,10 @@ test("equals should return true", t => {
   const pair = [1, 1];
   t.is(equals(pair[0])(pair[1]), true);
 });
-test.todo("equals should return false");
+test("equals should return false", t => {
+  const pair = [0, 1];
+  t.is(equals(pair[0])(pair[1]), false);
+});
 
 test.todo("gt should be a function");
 test.todo("gt should throw error when argument is invalid");
