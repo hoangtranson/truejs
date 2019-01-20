@@ -146,8 +146,11 @@ test("isInteger should return false", t => {
   });
 });
 
-test.todo("equals should be a function");
-test.todo("equals should throw error when argument is invalid");
+test("equals should throw error when argument is invalid", t => {
+  const pair = [null, 1];
+  const error = t.throws(() => equals(pair[0])(pair[1]), TypeError);
+  t.is(error.message, "expected is not a valid number");
+});
 test.todo("equals should return true");
 test.todo("equals should return false");
 
