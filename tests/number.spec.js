@@ -81,7 +81,11 @@ test("lt should throw error when argument is invalid", t => {
   const error = t.throws(() => lt(pair[0])(pair[1]), TypeError);
   t.is(error.message, "lt is not a valid number");
 });
-test.todo("lt should return true");
+test("lt should return true", t => {
+  const pair = [10, 9];
+  const value = max(pair[0])(pair[1]);
+  t.is(value, true);
+});
 test.todo("lt should return false");
 
 test.todo("isPositive should return true");
