@@ -4,17 +4,17 @@
 
 **truthjs** is a javascript validator library for:
 
-- Array
-- Boolean
-- Email
-- Network
 - Number
-- Object
-- String
+- Array (future support)
+- Boolean (future support)
+- Email (future support)
+- Network (future support)
+- Object (future support)
+- String (future support)
 
-truthjs takes a functional aproach in validations. All validators are composable to create useful validators.
+truthjs was implemented by functional approach by creating validator composable.
 
-> truthjs uses recent ES features. It is tested on stable Node and should run out of the box in evergreen browsers. If you need to support legacy browsers consider using a transpiler with polyfills.
+> truthjs uses recent ES features. It is tested on stable Node. If you need to support legacy browsers consider using a transpiler with polyfills.
 
 ## Installation
 
