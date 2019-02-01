@@ -4,45 +4,54 @@ const numberValidator = () => {
   const isNumber = () => value => checkType(value, "number");
   const isNaN = () => value => Number.isNaN(value);
   const min = min => {
-    !isNumber()(min)
-      ? printErr("min is not a valid number")
-      : value => value >= min;
+    if (!isNumber()(min)) {
+      throw new TypeError("min is not a valid number");
+    }
+
+    return value => value >= min;
   };
 
   const max = max => {
-    !isNumber()(max)
-      ? printErr("max is not a valid number")
-      : value => value <= max;
+    if (!isNumber()(max)) {
+      throw new TypeError("max is not a valid number");
+    }
+
+    return value => value <= max;
   };
 
   const lt = lt => {
-    !isNumber()(lt)
-      ? printErr("lt is not a valid number")
-      : value => value < lt;
+    if (!isNumber()(lt)) {
+      throw new TypeError("lt is not a valid number");
+    }
+    return value => value < lt;
   };
 
   const isPositive = () => value => value > 0;
   const isNegative = () => value => value < 0;
   const isInteger = () => value => Number.isInteger(value);
   const equals = expected => {
-    !isNumber()(expected)
-      ? printErr("expected is not a valid number")
-      : value => value === expected;
+    if (!isNumber()(expected)) {
+      throw new TypeError("expected is not a valid number");
+    }
+
+    return value => value === expected;
   };
 
   const gt = gt => {
-    !isNumber()(gt)
-      ? printErr("gt is not a valid number")
-      : value => value > gt;
+    if (!isNumber()(gt)) {
+      throw new TypeError("gt is not a valid number");
+    }
+
+    return value => value > gt;
   };
 
   const between = (a, b) => {
     if (!isNumber()(a)) {
-      printErr("a is not a valid number");
+      throw new TypeError("a is not a valid number");
     }
 
     if (!isNumber()(b)) {
-      printErr("b is not a valid number");
+      throw new TypeError("b is not a valid number");
     }
 
     if (a > b) {
@@ -53,10 +62,6 @@ const numberValidator = () => {
 
     return value => value > a && value < b;
   };
-
-  function printErr(msg) {
-    throw new TypeError(msg);
-  }
 
   return {
     isNumber,
