@@ -1,6 +1,6 @@
 # truthjs
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/651c8c4d5473ebf905b2/maintainability)](https://codeclimate.com/github/hoangtranson/truejs/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/651c8c4d5473ebf905b2/test_coverage)](https://codeclimate.com/github/hoangtranson/truejs/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/651c8c4d5473ebf905b2/maintainability)](https://codeclimate.com/github/hoangtranson/truejs/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/651c8c4d5473ebf905b2/coverage)](https://codeclimate.com/github/hoangtranson/truejs/coverage)
 
 **truthjs** is a javascript validator library for:
 
