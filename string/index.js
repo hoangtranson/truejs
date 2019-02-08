@@ -1,7 +1,15 @@
+const checkType = require("../utils");
 
 const stringValidator = () => {
     const isUppercase = () => value => value === value.toUpperCase();
-    const startWith = () => '';
+    const startWith = (str) => {
+        const validString = isString();
+
+        if (!validString(str)) {
+            throw new TypeError('argument is not a string');
+        }
+        return value => value.startsWith(str);
+    };
     const isOneOf = () => '';
     const isNotEmpty = () => '';
     const min = () => '';
@@ -9,7 +17,7 @@ const stringValidator = () => {
     const isMatch = () => '';
     const isLowerCase = () => '';
     const length = () => '';
-    const isString = () => '';
+    const isString = () => value => checkType(value, 'string');
     const isJson = () => '';
     const isHtml = () => '';
     const isHexColor = () => '';
@@ -25,6 +33,7 @@ const stringValidator = () => {
 
     return {
         isUppercase,
+        startWith
     };
 };
 
