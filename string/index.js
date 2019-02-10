@@ -26,7 +26,12 @@ const stringValidator = () => {
 
         return value => value.length <= len;
     };
-    const isMatch = () => '';
+    const match = pattern => {
+        if (!(pattern instanceof RegExp)) {
+            throw new TypeError('argument is not an instance of RegExp');
+        }
+        return value => pattern.test(value);
+    };
     const isLowerCase = () => '';
     const length = () => '';
     const isString = () => value => checkType(value, 'string');
