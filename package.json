@@ -6,7 +6,12 @@
   "scripts": {
     "test": "ava ./tests/**/*",
     "test:coverage": "nyc --reporter=html ava ./tests/**/*",
-    "commit": "npx git-cz"
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "repository": {
     "type": "git",
@@ -20,6 +25,9 @@
   "homepage": "https://github.com/hoangtranson/truejs#readme",
   "devDependencies": {
     "ava": "1.1.0",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
     "nyc": "13.1.0"
-  }
+  },
+  "dependencies": {}
 }

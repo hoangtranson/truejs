@@ -1,4 +1,5 @@
 const checkType = require("../utils");
+const { isNumber } = require('../number');
 
 const stringValidator = () => {
     const isUppercase = () => value => value === value.toUpperCase();
@@ -12,8 +13,19 @@ const stringValidator = () => {
     };
     const isOneOf = () => '';
     const isNotEmpty = () => '';
-    const min = () => '';
-    const max = () => '';
+    const min = (len) => {
+        if (!isNumber(len)) {
+            throw new TypeError('argument is not a number');
+        }
+        return value => value.length >= len;
+    };
+    const max = (len) => {
+        if (!validNumber(len)) {
+            throw new TypeError('max: maxLength argument is not a number');
+        }
+
+        return value => value.length <= len;
+    };
     const isMatch = () => '';
     const isLowerCase = () => '';
     const length = () => '';
