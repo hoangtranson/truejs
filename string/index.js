@@ -44,9 +44,12 @@ const stringValidator = () => {
           return value => value.length === len;
     };
     const isString = () => value => checkType(value, 'string');
-    const isJson = () => '';
-    const isHtml = () => '';
-    const isHexColor = () => '';
+    const isJson = () => 'support later';
+    const isHtml = () => 'support later';
+    const isHexColor = () => {
+        const hexColorMatcher = match(/^#([0-9A-F]{3}|[0-9A-F]{6})$/i);
+        return value => hexColorMatcher(value);
+    };
     const eq = () => '';
     const extendedAscii = () => '';
     const endWith = () => '';
@@ -91,7 +94,7 @@ const stringValidator = () => {
             return true;
         };
     };
-    const isMarkdown = () => '';
+    const isMarkdown = () => 'support later';
 
     return {
         isUppercase,
@@ -103,7 +106,8 @@ const stringValidator = () => {
         base64,
         contain,
         empty,
-        length
+        length,
+        isHexColor
     };
 };
 
