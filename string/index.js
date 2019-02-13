@@ -41,7 +41,10 @@ const stringValidator = () => {
     const eq = () => '';
     const extendedAscii = () => '';
     const endWith = () => '';
-    const empty = () => '';
+    const empty = () => {
+        const emptyMatcher = match(/^[\s]*$/);
+        return value => emptyMatcher(value);
+    };
     const contain = (str) => {
         const validString = isString();
         if (!validString(str)) {
@@ -89,7 +92,8 @@ const stringValidator = () => {
         min,
         max,
         base64,
-        contain
+        contain,
+        empty
     };
 };
 
