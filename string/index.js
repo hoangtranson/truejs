@@ -52,7 +52,14 @@ const stringValidator = () => {
     };
     const eq = () => '';
     const extendedAscii = () => '';
-    const endWith = () => '';
+    const endWith = end => {
+        const validString = isString();
+        if (!validString(end)) {
+            throw new TypeError('argument is not a string');
+          }
+        
+          return value => value.endsWith(end);
+    };
     const empty = () => {
         const emptyMatcher = match(/^[\s]*$/);
         return value => emptyMatcher(value);
@@ -124,7 +131,8 @@ const stringValidator = () => {
         empty,
         length,
         isHexColor,
-        between
+        between,
+        endWith
     };
 };
 
