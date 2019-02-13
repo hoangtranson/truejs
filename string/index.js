@@ -51,7 +51,10 @@ const stringValidator = () => {
         return value => hexColorMatcher(value);
     };
     const eq = () => '';
-    const extendedAscii = () => '';
+    const extendedAscii = () => {
+        const extendedAsciiMatcher = match(/^[\x00-\xFF]*$/);
+        return value => extendedAsciiMatcher(value);
+    };
     const endWith = end => {
         const validString = isString();
         if (!validString(end)) {
@@ -132,7 +135,8 @@ const stringValidator = () => {
         length,
         isHexColor,
         between,
-        endWith
+        endWith,
+        extendedAscii
     };
 };
 
