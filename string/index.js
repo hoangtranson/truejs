@@ -32,7 +32,7 @@ const stringValidator = () => {
         }
         return value => pattern.test(value);
     };
-    const isLowerCase = () => '';
+    const isLowerCase = () => value => value === value.toLowerCase();;
     const length = () => '';
     const isString = () => value => checkType(value, 'string');
     const isJson = () => '';
