@@ -42,7 +42,14 @@ const stringValidator = () => {
     const extendedAscii = () => '';
     const endWith = () => '';
     const empty = () => '';
-    const contain = () => '';
+    const contain = (str) => {
+        const validString = isString();
+        if (!validString(str)) {
+            throw new TypeError('argument is not a string');
+          }
+        
+          return value => value.indexOf(str) > -1;
+    };
     const between = () => '';
     const ascii = () => {
         const asciiMatcher = match(/^[\x00-\x7F]*$/);
@@ -80,7 +87,9 @@ const stringValidator = () => {
         startWith,
         ascii,
         min,
-        max
+        max,
+        base64,
+        contain
     };
 };
 
