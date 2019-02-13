@@ -39,9 +39,9 @@ const stringValidator = () => {
         const validNumber = isNumber();
         if (!validNumber(len)) {
             throw new TypeError('argument is not a number');
-          }
-        
-          return value => value.length === len;
+        }
+
+        return value => value.length === len;
     };
     const isString = () => value => checkType(value, 'string');
     const isJson = () => 'support later';
@@ -61,11 +61,27 @@ const stringValidator = () => {
         const validString = isString();
         if (!validString(str)) {
             throw new TypeError('argument is not a string');
-          }
-        
-          return value => value.indexOf(str) > -1;
+        }
+
+        return value => value.indexOf(str) > -1;
     };
-    const between = () => '';
+    const between = (min, max) => {
+        const validNumber = isNumber();
+        if (!validNumber(min)) {
+            throw new TypeError('between: min argument is not a valid number');
+        }
+        if (!validNumber(max)) {
+            throw new TypeError('between: max argument is not a valid number');
+        }
+
+        if (min > max) {
+            let temp = min;
+            min = max;
+            max = temp;
+        }
+
+        return value => value.length >= min && value.length <= max;
+    };
     const ascii = () => {
         const asciiMatcher = match(/^[\x00-\x7F]*$/);
         return value => asciiMatcher(value);
@@ -107,7 +123,8 @@ const stringValidator = () => {
         contain,
         empty,
         length,
-        isHexColor
+        isHexColor,
+        between
     };
 };
 
