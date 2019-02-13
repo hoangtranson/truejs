@@ -14,14 +14,16 @@ const stringValidator = () => {
     const isOneOf = () => '';
     const isNotEmpty = () => '';
     const min = len => {
-        if (!isNumber(len)) {
+        const validNumber = isNumber();
+        if (!validNumber(len)) {
             throw new TypeError('argument is not a number');
         }
         return value => value.length >= len;
     };
     const max = len => {
+        const validNumber = isNumber();
         if (!validNumber(len)) {
-            throw new TypeError('max: maxLength argument is not a number');
+            throw new TypeError('argument is not a number');
         }
 
         return value => value.length <= len;
@@ -33,7 +35,14 @@ const stringValidator = () => {
         return value => pattern.test(value);
     };
     const isLowerCase = () => value => value === value.toLowerCase();;
-    const length = () => '';
+    const length = (len) => {
+        const validNumber = isNumber();
+        if (!validNumber(len)) {
+            throw new TypeError('argument is not a number');
+          }
+        
+          return value => value.length === len;
+    };
     const isString = () => value => checkType(value, 'string');
     const isJson = () => '';
     const isHtml = () => '';
@@ -93,7 +102,8 @@ const stringValidator = () => {
         max,
         base64,
         contain,
-        empty
+        empty,
+        length
     };
 };
 
