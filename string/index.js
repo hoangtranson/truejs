@@ -44,13 +44,20 @@ const stringValidator = () => {
     const empty = () => '';
     const contain = () => '';
     const between = () => '';
-    const ascii = () => '';
+    const ascii = () => {
+        const asciiMatcher = match(/^[\x00-\x7F]*$/);
+        return value => asciiMatcher(value);
+    };
     const base64 = () => '';
     const isMarkdown = () => '';
 
     return {
         isUppercase,
-        startWith
+        isLowerCase,
+        startWith,
+        ascii,
+        min,
+        max
     };
 };
 
