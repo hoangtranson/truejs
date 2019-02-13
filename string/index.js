@@ -11,8 +11,6 @@ const stringValidator = () => {
         }
         return value => value.startsWith(str);
     };
-    const isOneOf = () => '';
-    const isNotEmpty = () => '';
     const min = len => {
         const validNumber = isNumber();
         if (!validNumber(len)) {
@@ -44,13 +42,10 @@ const stringValidator = () => {
         return value => value.length === len;
     };
     const isString = () => value => checkType(value, 'string');
-    const isJson = () => 'support later';
-    const isHtml = () => 'support later';
     const isHexColor = () => {
         const hexColorMatcher = match(/^#([0-9A-F]{3}|[0-9A-F]{6})$/i);
         return value => hexColorMatcher(value);
     };
-    const eq = () => '';
     const extendedAscii = () => {
         const extendedAsciiMatcher = match(/^[\x00-\xFF]*$/);
         return value => extendedAsciiMatcher(value);
@@ -121,7 +116,11 @@ const stringValidator = () => {
         };
     };
     const isMarkdown = () => 'support later';
-
+    const isJson = () => 'support later';
+    const isHtml = () => 'support later';
+    const isOneOf = () => 'support later';
+    const isNotEmpty = () => 'support later';
+    const eq = () => 'support later';
     return {
         isUppercase,
         isLowerCase,
