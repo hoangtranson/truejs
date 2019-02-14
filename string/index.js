@@ -120,7 +120,14 @@ const stringValidator = () => {
     const isHtml = () => 'support later';
     const isOneOf = () => 'support later';
     const isNotEmpty = () => 'support later';
-    const eq = () => 'support later';
+    const eq = (str) => {
+        const validString = isString();
+        if (!validString(str)) {
+            throw new TypeError('argument is not a string');
+          }
+        
+          return value => value === str;
+    };
     return {
         isUppercase,
         isLowerCase,
@@ -135,7 +142,8 @@ const stringValidator = () => {
         isHexColor,
         between,
         endWith,
-        extendedAscii
+        extendedAscii,
+        eq
     };
 };
 
