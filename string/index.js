@@ -119,7 +119,10 @@ const stringValidator = () => {
     const isJson = () => 'support later';
     const isHtml = () => 'support later';
     const isOneOf = () => 'support later';
-    const isNotEmpty = () => 'support later';
+    const isNotEmpty = () => {
+        const isEmpty = empty();
+        return value => !isEmpty(value);
+    };
     const eq = (str) => {
         const validString = isString();
         if (!validString(str)) {
@@ -143,7 +146,8 @@ const stringValidator = () => {
         between,
         endWith,
         extendedAscii,
-        eq
+        eq,
+        isNotEmpty
     };
 };
 
